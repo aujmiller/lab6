@@ -14,7 +14,7 @@ def sample_run_anonymizer(input_text: str, input_start: int, input_end: int) -> 
         operators={"PERSON": OperatorConfig("replace", {"new_value": "BIP"})}
     )
 
-    print(result)
+    return result
 
     # input should be:
     # text: My name is Bond.
