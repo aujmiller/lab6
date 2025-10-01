@@ -1,9 +1,15 @@
 import pytest
 from presidio_anonymizer.sample import sample_run_anonymizer
 
-def test_sample_run_anonymizer():
-    text = "My name is Bond."
-    start, end = 11, 15
+@pytest.mark.parametrize(
+    "text, start, end",
+    [
+        ("My name is Bond.", 11, 15),
+    ],
+)
+def test_sample_run_anonymizer(text, start, end):
+    # text = "My name is Bond."
+    # start, end = 11, 15
     result = sample_run_anonymizer(text, start, end)
 
     assert result.text == "My name is BIP."
